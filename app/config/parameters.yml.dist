@@ -24,24 +24,3 @@ parameters:
     locale:            en
 
     base_url:          http://127.0.0.1:8000
-
-    # constants
-    constants.organization.clients_per_list: 1
-    constants.organization.transactions_per_list: 1
-    constants.organization.subscribers_per_list: 5
-    constants.organization.organizations_per_list: 5
-    constants.organization.notifications_per_list: 5
-    constants.organization.shops_per_list: 5
-    constants.organization.promotions_per_list: 5
-    constants.organization.invites_per_list: 5
-    constants.organization.currencies_per_list: 5
-    constants.organization.reviews_per_list: 5
-    constants.organization.payment_operations_per_list: 1
-
-    onesignal.app_id:  app_id
-    onesignal.api_key: api_key
-
-    smsru.api_key: ~
-
-    main.disable_sms_notifications: false
-    main.disable_password_generation: false

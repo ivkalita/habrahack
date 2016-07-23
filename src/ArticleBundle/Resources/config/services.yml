@@ -2,3 +2,9 @@ services:
     article.manager.article:
         class: ArticleBundle\Entity\Manager\ArticleManager
         arguments: ['ArticleBundle\Entity\Article', '@doctrine']
+
+    admin.article:
+        class: ArticleBundle\Admin\ArticleAdmin
+        arguments: [~, ArticleBundle\Entity\Article, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Статьи}

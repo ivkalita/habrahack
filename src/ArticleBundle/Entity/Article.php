@@ -145,4 +145,17 @@ class Article extends TimestampableEntity
 
         return $this;
     }
+
+    /**
+     * @return \DateTime
+     *
+     * @JMS\VirtualProperty()
+     * @JMS\SerializedName("created_at")
+     * @JMS\Type("Timestamp")
+     * @JMS\Groups("all")
+     */
+    public function getCreatedAt()
+    {
+        return parent::getCreatedAt();
+    }
 }

@@ -28,7 +28,7 @@
         "doctrine/doctrine-migrations-bundle": "^1.1",
         "sensio/framework-extra-bundle": "^3.0",
         "liip/functional-test-bundle": "^1.6",
-        "sonata-project/admin-bundle": "^3.3",
+        "sonata-project/admin-bundle": "^3.4",
         "sonata-project/doctrine-orm-admin-bundle": "^3.0",
         "oh/google-map-form-type-bundle": "dev-master",
         "sonata-project/media-bundle": "^3.0",
