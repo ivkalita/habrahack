@@ -1,0 +1,40 @@
+UserBundle\Entity\UserRole:
+    user_role__user:
+        name: 'Пользователь'
+        role: 'USER'
+
+UserBundle\Entity\Device:
+    device__current:
+        deviceId: <uuid()>
+        platform: 'android'
+    device__another:
+        deviceId: <uuid()>
+        platform: 'ios'
+
+UserBundle\Entity\AccessToken:
+    access_token__current:
+        user: '@user'
+        device: '@device__current'
+        token: 'current_token'
+    access_token__another:
+        user: '@user'
+        device: '@device__another'
+        token: 'another_token'
+
+UserBundle\Entity\Phone:
+    phone:
+        phone: '+70000000000'
+
+UserBundle\Entity\User:
+    user:
+        phones: ['@phone']
+        userRoles: ['@user_role__user']
+
+UserBundle\Entity\ChangePhoneRequest:
+    change_phone_request:
+        user: '@user'
+        oldPhone: '@phone'
+        secret: 'secret'
+        oldPhonePass: 'old_phone_pass_sha256'
+        newPhonePass: 'new_phone_pass_sha256'
+        newPhoneString: '+70000000001'

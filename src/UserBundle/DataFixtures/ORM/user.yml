@@ -1,0 +1,11 @@
+UserBundle\Entity\User:
+    user__common:
+        phones: ['@phone__common']
+        passports: ['@passport__common']
+        gender: 'male'
+
+    user__request:
+        secret: secret
+        smsCode: 1234
+        smsCodeDt: <dateTimeBetween('-4 minutes', 'now')>
+        phones: ['@phone__request']

@@ -1,0 +1,47 @@
+# This file is a "template" of what your parameters.yml file should look like
+# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
+# http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
+parameters:
+    database_driver:   pdo_pgsql
+    database_host:     127.0.0.1
+    database_port:     ~
+    database_name:     echeep
+    database_test_name: echeep-test
+    database_user:     root
+    database_password: ~
+    database_server_version: 9.3
+    # You should uncomment this if you want use pdo_sqlite
+    # database_path: "%kernel.root_dir%/data.db3"
+
+    mailer_transport:  smtp
+    mailer_host:       127.0.0.1
+    mailer_user:       ~
+    mailer_password:   ~
+
+    # A secret key that's used to generate certain security-related tokens
+    secret:            ThisTokenIsNotSoSecretChangeIt
+
+    locale:            en
+
+    base_url:          http://127.0.0.1:8000
+
+    # constants
+    constants.organization.clients_per_list: 1
+    constants.organization.transactions_per_list: 1
+    constants.organization.subscribers_per_list: 5
+    constants.organization.organizations_per_list: 5
+    constants.organization.notifications_per_list: 5
+    constants.organization.shops_per_list: 5
+    constants.organization.promotions_per_list: 5
+    constants.organization.invites_per_list: 5
+    constants.organization.currencies_per_list: 5
+    constants.organization.reviews_per_list: 5
+    constants.organization.payment_operations_per_list: 1
+
+    onesignal.app_id:  app_id
+    onesignal.api_key: api_key
+
+    smsru.api_key: ~
+
+    main.disable_sms_notifications: false
+    main.disable_password_generation: false

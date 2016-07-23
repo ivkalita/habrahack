@@ -1,0 +1,31 @@
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver:   "%database_driver%"
+        host:     "%database_host%"
+        port:     "%database_port%"
+        dbname:   "%database_name%"
+        user:     "%database_user%"
+        password: "%database_password%"
+        server_version: "%database_server_version%"
+        charset:  UTF8
+        mapping_types:
+            enum: string
+
+        types:
+            PlatformType:                       UserBundle\DBAL\Types\PlatformType
+            GenderType:                         UserBundle\DBAL\Types\GenderType
+            json:                               Sonata\Doctrine\Types\JsonType
+
+    orm:
+        auto_generate_proxy_classes: "%kernel.debug%"
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+        mappings:
+            SonataMediaBundle: ~
+
+doctrine_migrations:
+    dir_name: "%kernel.root_dir%/DoctrineMigrations"
+    namespace: Application\Migrations
+    table_name: migration_versions
+    name: Application Migrations

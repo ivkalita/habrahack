@@ -1,0 +1,27 @@
+UserBundle\Entity\UserRole:
+    user_role__user:
+        name: Пользователь
+        role: USER
+
+UserBundle\Entity\Phone:
+    phone__1:
+        phone: '+70000000000'
+    phone__2:
+        phone: '+70000000001'
+
+UserBundle\Entity\User:
+    user__1:
+        phones: ['@phone__1']
+        userRoles: ['@user_role__user']
+    user__2:
+        phones: ['@phone__2']
+        userRoles: ['@user_role__user']
+
+UserBundle\Entity\ChangePhoneRequest:
+    change_phone_request:
+        user: '@user__1'
+        oldPhone: '@phone__1'
+        secret: 'secret'
+        oldPhonePass: 'old_phone_pass_sha256'
+        newPhonePass: 'new_phone_pass_sha256'
+        newPhoneString: '+70000000001'

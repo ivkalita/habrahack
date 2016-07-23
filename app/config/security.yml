@@ -1,0 +1,61 @@
+security:
+    providers:
+        in_memory:
+            memory:
+                users:
+#        db:
+#            id: app.db_user_provider
+
+#    role_hierarchy:
+#        ROLE_USER_USER: ~
+
+#    encoders:
+#        UserBundle\Entity\User: bcrypt
+
+    firewalls:
+#        mobile_api_auth:
+#            pattern: ^/api/mobile/v\d+/auth
+#            anonymous: ~
+#
+#        mobile_api_cities:
+#            pattern: ^/api/mobile/v\d+/cities
+#            anonymous: ~
+#
+#        mobile_api_main:
+#            pattern: ^/api/mobile
+#            stateless: true
+#            simple_preauth:
+#                authenticator: app.access_token_authenticator
+#
+#        integration_api_main:
+#            pattern: ^/api/integration
+#            provider: db_shop
+#            stateless: true
+#            simple_preauth:
+#                authenticator: integration.api_key_authenticator
+#
+#        dev:
+#            pattern: ^/(_(profiler|wdt)|css|images|js)/
+#            security: false
+#
+#        admin:
+#            pattern: ^/admin
+#            anonymous: ~
+#            simple_form:
+#                authenticator: admin.form_login_authenticator
+#                login_path: admin_login
+#                check_path: admin_login
+#                success_handler: admin.handler.auth
+#            logout:
+#                path: /admin/logout
+
+        main:
+            anonymous: ~
+
+    access_control:
+#        - { path: ^/api/mobile/v1/auth, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#        - { path: ^/admin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#        - { path: ^/admin/selection, roles: ROLE_ADMIN_USER }
+#        - { path: ^/admin/global/client-management, roles: [ROLE_ADMIN_CLIENT_MANAGER, ROLE_ADMIN_SUPER_ADMIN] }
+#        - { path: ^/admin/global, roles: ROLE_ADMIN_USER }
+#        - { path: ^/admin/organizations, roles: [ROLE_ORGANIZATION_USER, ROLE_ADMIN_SUPER_ADMIN] }

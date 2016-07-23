@@ -1,0 +1,8 @@
+ChipBundle\Entity\Chip:
+    chip:
+        since: <dateTime()>
+        until: <dateTimeBetween($since, '+ 6 months')>
+        batch: "@chip__batch__accepted"
+        uuid (unique): <uuid()>
+        user: '@user__common'
+        isActive: true

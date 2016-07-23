@@ -1,0 +1,6 @@
+UserBundle\Entity\Phone:
+    phone__common:
+        phone: '+70000000000'
+
+    phone__request:
+        phone: '+70000000001'

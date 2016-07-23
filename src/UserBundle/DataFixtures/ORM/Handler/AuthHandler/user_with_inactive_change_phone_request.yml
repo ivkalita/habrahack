@@ -1,0 +1,24 @@
+UserBundle\Entity\UserRole:
+    user_role__user:
+        name: Пользователь
+        role: USER
+
+UserBundle\Entity\Phone:
+    phone:
+        phone: '+70000000000'
+
+UserBundle\Entity\User:
+    user:
+        phones: ['@phone']
+        userRoles: ['@user_role__user']
+
+UserBundle\Entity\ChangePhoneRequest:
+    change_phone_request:
+        user: '@user'
+        oldPhone: '@phone'
+        secret: 'secret'
+        oldPhonePass: 'old_phone_pass_sha256'
+        newPhonePass: 'new_phone_pass_sha256'
+        newPhoneString: '+70000000001'
+        since: <dateTimeBetween('-15 minutes', '-10 minutes')>
+        until: <dateTimeBetween('-7 minutes', '-1 minutes')>

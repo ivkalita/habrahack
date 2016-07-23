@@ -1,0 +1,10 @@
+AppBundle\Entity\City:
+    city__vl:
+        name: Владивосток
+        lat: 43.7
+        lon: 131.54
+
+    city__msk:
+        name: Москва
+        lat: 43.7
+        lon: 131.54

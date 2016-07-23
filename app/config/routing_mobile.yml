@@ -1,0 +1,15 @@
+user:
+    type: rest
+    resource: "@UserBundle/Resources/config/routing.yml"
+
+auth:
+    type: rest
+    resource: "@UserBundle/Resources/config/routing_auth.yml"
+
+app:
+    type: rest
+    resource: "@AppBundle/Resources/config/routing_mobile.yml"
+
+article:
+    type: rest
+    resource: "@ArticleBundle/Resources/config/routing.yml"

@@ -1,0 +1,4 @@
+city:
+    type: rest
+    resource: AppBundle\Controller\API\CityController
+    name_prefix: api_mobile_

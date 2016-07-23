@@ -1,0 +1,12 @@
+UserBundle\Entity\Device:
+    device__android_1:
+        deviceId: <uuid()>
+        platform: android
+
+    device__ios_1:
+        deviceId: <uuid()>
+        platform: ios
+
+    device__main_test_user:
+        deviceId: <uuid()>
+        platform: ios

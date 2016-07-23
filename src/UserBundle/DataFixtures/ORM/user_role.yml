@@ -1,0 +1,4 @@
+UserBundle\Entity\UserRole:
+    user_role__user:
+        name: 'Пользователь'
+        role: 'USER'

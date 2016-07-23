@@ -1,0 +1,4 @@
+user:
+    type:        rest
+    resource:    UserBundle\Controller\API\UserController
+    name_prefix: api_mobile_

@@ -1,0 +1,4 @@
+UserBundle\Entity\UserShopRole:
+    user_shop_role__test:
+        role: '@shop_role__test'
+        shop: '@shop__*'

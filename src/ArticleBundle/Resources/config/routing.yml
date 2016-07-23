@@ -1,0 +1,3 @@
+article_homepage:
+    type:        rest
+    resource:    ArticleBundle\Controller\API\ArticleController

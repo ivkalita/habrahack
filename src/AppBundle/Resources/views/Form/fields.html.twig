@@ -1,0 +1,36 @@
+{% block tag_widget %}
+    {% spaceless %}
+        {{ form_widget(form) }}
+    {% endspaceless %}
+    <script>
+        $(function() {
+            var tags = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                remote: {
+                    url: "{{ path('organization_admin_ajax_tag_list') }}?query=%QUERY",
+                    wildcard: "%QUERY"
+                }
+            });
+            tags.initialize();
+
+            $("#{{ form.vars.id }}").tagsinput({
+                allowDuplicates: false,
+                confirmKeys: [13, 44],
+                itemValue: "id",
+                itemText: "name",
+                typeaheadjs: {
+                    name: "tags",
+                    displayKey: "name",
+                    source: tags.ttAdapter()
+                },
+                freeInput: false
+            });
+
+            var prefilledTags = {{ tags|json_encode(constant('JSON_PRETTY_PRINT'))|raw }};
+            $.each(prefilledTags, function (index, value) {
+                $("#{{ form.vars.id }}").tagsinput('add', value);
+            });
+        });
+    </script>
+{% endblock %}

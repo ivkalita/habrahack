@@ -1,0 +1,18 @@
+UserBundle\Entity\UserRole:
+    user_role__user:
+        name: Пользователь
+        role: USER
+
+UserBundle\Entity\Phone:
+    phone__1:
+        phone: '+70000000000'
+    phone__2:
+        phone: '+70000000001'
+
+UserBundle\Entity\User:
+    user__1:
+        phones: ['@phone__1']
+        userRoles: ['@user_role__user']
+    user__2:
+        phones: ['@phone__2']
+        userRoles: ['@user_role__user']

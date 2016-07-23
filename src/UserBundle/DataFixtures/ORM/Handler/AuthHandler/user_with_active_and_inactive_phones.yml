@@ -1,0 +1,16 @@
+UserBundle\Entity\UserRole:
+    user_role__user:
+        name: Пользователь
+        role: USER
+
+UserBundle\Entity\Phone:
+    phone__1:
+        phone: '+70000000000'
+    phone__2:
+        phone: '+70000000001'
+        until: <dateTimeBetween('-10 minutes', '-5 minutes')>
+
+UserBundle\Entity\User:
+    user:
+        phones: ['@phone__1', '@phone__2']
+        userRoles: ['@user_role__user']

@@ -1,0 +1,33 @@
+services:
+    app.twig_extension:
+        class: AppBundle\Twig\Extension\AppExtension
+        public: true
+        arguments: ["@router", "@request_stack"]
+        tags:
+            - { name: twig.extension }
+
+    app.form.type.boolean:
+        class: AppBundle\Form\Type\BooleanType
+        tags:
+            - { name: form.type, alias: mkr_boolean }
+
+    app.timestamp_type_handler:
+        class: AppBundle\Serializer\Handlers\TimestampHandler
+        tags:
+            - { name: jms_serializer.subscribing_handler }
+
+    app.image_type_handler:
+        class: AppBundle\Serializer\Handlers\ImageHandler
+        arguments: ['@sonata.media.provider.image', '%base_url%']
+        tags:
+            - { name: jms_serializer.subscribing_handler }
+
+    app.manager.city:
+        class: AppBundle\Entity\Manager\CityManager
+        arguments: ['AppBundle\Entity\City', '@doctrine']
+
+    sonata.media.doctrine.event_subscriber:
+        class: AppBundle\Listener\ORM\MediaEventSubscriber
+        arguments: ['@service_container']
+        tags:
+            - { name: doctrine.event_subscriber }

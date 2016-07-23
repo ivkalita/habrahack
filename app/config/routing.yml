@@ -1,0 +1,7 @@
+app:
+    resource: "@AppBundle/Resources/config/routing.yml"
+
+mobile:
+    resource:   routing_mobile.yml
+    prefix:     /api/mobile/v1
+    defaults:  { _format: json }

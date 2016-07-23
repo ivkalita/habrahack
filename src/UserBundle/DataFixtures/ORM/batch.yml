@@ -1,0 +1,5 @@
+ChipBundle\Entity\Batch:
+    chip__batch__accepted:
+        status: "accepted"
+        createdAt: <dateTimeBetween('-1 year', '-6 days')>
+        updatedAt: <dateTimeBetween($createdAt, 'now')>

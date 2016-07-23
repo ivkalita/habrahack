@@ -1,0 +1,4 @@
+UserBundle\Entity\AccessToken:
+    access_token__common:
+        token: token
+        user: '@user__common'

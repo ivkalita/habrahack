@@ -1,0 +1,13 @@
+UserBundle\Entity\Passport:
+    passport__common:
+        series: 0509
+        number: 650061
+        emissionDt: <dateTimeBetween('-200 days', 'now')>
+        emissionPoint: 'ОУФМС РФ по ПК в Советском р-не г.Владивостока 250-003'
+        address: 'Русская 56, кв.26'
+        birthday: <dateTimeBetween('-1000 days', 'now')>
+        firstName: Иван
+        middleName: Иванович
+        lastName: Иванов
+        gender: 'male'
+

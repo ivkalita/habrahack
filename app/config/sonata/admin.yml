@@ -1,0 +1,40 @@
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]
+        admin.block.service.client_management:
+            contexts: [admin]
+
+sonata_admin:
+    title: eCheep
+    title_logo: bundles/organizationadmin/images/icon_round.png
+    templates:
+        layout:     'AdminBundle::standard_layout.html.twig'
+        user_block: 'AdminBundle:Block:user_block.html.twig'
+    dashboard:
+        blocks:
+            - { position: left, type: sonata.admin.block.admin_list }
+            - { position: right, type: admin.block.service.client_management, roles: [ROLE_ADMIN_CLIENT_MANAGER, ROLE_ADMIN_SUPER_ADMIN] }
+        groups:
+            default:
+                label: default
+                label_catalogue: AdminBundle
+                items:
+                    - admin.user
+                    - admin.organization
+                    - admin.notification
+                    - admin.currency
+                    - admin.tag
+                    - admin.category
+                    - admin.order
+                    - admin.payment_accrual_operation
+            chip_management:
+                label: chip_management
+                label_catalogue: AdminBundle
+                items:
+                    - admin.chip
+                    - admin.batch
+
+    security:
+        handler: sonata.admin.security.handler.role

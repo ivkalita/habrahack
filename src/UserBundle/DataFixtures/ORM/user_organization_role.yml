@@ -1,0 +1,4 @@
+UserBundle\Entity\UserOrganizationRole:
+    user_organization_role__test:
+        role: '@organization_role__test'
+        organization: '@organization__*'

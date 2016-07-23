@@ -1,0 +1,9 @@
+{% block sonata_media_type_widget %}
+    {% if value is not empty and value.providerReference %}
+        {% thumbnail value, 'default_standard' %}
+    {% else %}
+        <img src="{{ asset('bundles/sonatamedia/grey.png') }}"
+             style="width: 200px; height: 200px; margin-bottom: 10px;">
+    {% endif %}
+    {{ form_widget(form.binaryContent) }}
+{% endblock sonata_media_type_widget %}
