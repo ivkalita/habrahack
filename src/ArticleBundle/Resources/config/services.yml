@@ -1,4 +1,4 @@
 services:
-#    article.example:
-#        class: ArticleBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
+    article.manager.article:
+        class: ArticleBundle\Entity\Manager\ArticleManager
+        arguments: ['ArticleBundle\Entity\Article', '@doctrine']
