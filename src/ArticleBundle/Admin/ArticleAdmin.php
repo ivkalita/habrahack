@@ -1,13 +1,12 @@
 <?php
+
 /**
  * Created by IntelliJ IDEA.
  * User: Ivan Kalita
  * Date: 23.07.16
- * Time: 20:51
+ * Time: 20:51.
  */
-
 namespace ArticleBundle\Admin;
-
 
 use ArticleBundle\Entity\Article;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
@@ -64,7 +63,7 @@ class ArticleAdmin extends AbstractAdmin
             return;
         }
 
-        $fileName = uniqid() . "." . $object->getFile()->guessExtension();
+        $fileName = uniqid() . '.' . $object->getFile()->guessExtension();
         $object->getFile()->move(
             $this->getConfigurationPool()->getContainer()->getParameter('video_directory'),
             $fileName

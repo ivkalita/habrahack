@@ -1,20 +1,18 @@
 <?php
+
 /**
  * Created by IntelliJ IDEA.
  * User: Ivan Kalita
  * Date: 24.07.16
- * Time: 0:42
+ * Time: 0:42.
  */
-
 namespace ArticleBundle\Entity;
-
 
 use AppBundle\Entity\TimestampableEntity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Class ArticleView
- * @package ArticleBundle\Entity
+ * Class ArticleView.
  *
  * @ORM\Entity()
  * @ORM\Table(name="articles__views")
@@ -22,7 +20,7 @@ use Doctrine\ORM\Mapping as ORM;
 class ArticleView extends TimestampableEntity
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id()

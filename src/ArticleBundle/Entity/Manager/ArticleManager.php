@@ -1,13 +1,12 @@
 <?php
+
 /**
  * Created by IntelliJ IDEA.
  * User: Ivan Kalita
  * Date: 23.07.16
- * Time: 19:52
+ * Time: 19:52.
  */
-
 namespace ArticleBundle\Entity\Manager;
-
 
 use AppBundle\Entity\Manager\BaseEntityManager;
 use AppBundle\Exceptions\NotFoundException;
@@ -17,9 +16,11 @@ class ArticleManager extends BaseEntityManager
 {
     /**
      * @param null $fromId
-     * @param int $count
-     * @return array
+     * @param int  $count
+     *
      * @throws NotFoundException
+     *
+     * @return array
      */
     public function findOrderedResult($fromId = null, $count = 10)
     {
@@ -45,5 +46,4 @@ class ArticleManager extends BaseEntityManager
 
         return $qb->getQuery()->getResult();
     }
-
 }

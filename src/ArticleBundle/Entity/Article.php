@@ -1,13 +1,12 @@
 <?php
+
 /**
  * Created by IntelliJ IDEA.
  * User: Ivan Kalita
  * Date: 23.07.16
- * Time: 19:48
+ * Time: 19:48.
  */
-
 namespace ArticleBundle\Entity;
-
 
 use AppBundle\Entity\TimestampableEntity;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -16,8 +15,7 @@ use JMS\Serializer\Annotation as JMS;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
- * Class Article
- * @package ArticleBundle\Entity
+ * Class Article.
  *
  * @ORM\Entity()
  * @ORM\Table(name="articles__articles")
