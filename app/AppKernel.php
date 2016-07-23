@@ -31,6 +31,7 @@ class AppKernel extends Kernel
             new Avanzu\AdminThemeBundle\AvanzuAdminThemeBundle(),
             new OldSound\RabbitMqBundle\OldSoundRabbitMqBundle(),
             new Craue\FormFlowBundle\CraueFormFlowBundle(),
+            new Sonata\IntlBundle\SonataIntlBundle(),
 
             new AppBundle\AppBundle(),
             new UserBundle\UserBundle(),

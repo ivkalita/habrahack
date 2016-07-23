@@ -217,4 +217,9 @@ class Article extends TimestampableEntity
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return mb_strlen($this->title, 'UTF-8') > 20 ? mb_substr($this->title, 0, 20, 'UTF-8') : $this->title;
+    }
 }

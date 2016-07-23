@@ -38,3 +38,8 @@ sonata_admin:
 
 #    security:
 #        handler: sonata.admin.security.handler.role
+
+sonata_intl:
+    timezone:
+        locales:
+            ru:    Asia/Vladivostok

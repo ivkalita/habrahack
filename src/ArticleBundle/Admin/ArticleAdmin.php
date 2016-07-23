@@ -16,6 +16,12 @@ use Sonata\CoreBundle\Model\Metadata;
 
 class ArticleAdmin extends AbstractAdmin
 {
+    protected $datagridValues = [
+        '_page' => 1,
+        '_sort_order' => 'DESC',
+        '_sort_by' => 'createdAt'
+    ];
+
     protected function configureFormFields(FormMapper $form)
     {
         parent::configureFormFields($form);
