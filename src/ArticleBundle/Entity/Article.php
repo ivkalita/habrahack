@@ -10,6 +10,7 @@ namespace ArticleBundle\Entity;
 
 
 use AppBundle\Entity\TimestampableEntity;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as JMS;
 
@@ -65,6 +66,18 @@ class Article extends TimestampableEntity
      * @JMS\Groups("all")
      */
     protected $placeholderUrl;
+
+    /**
+     * @var ArticleView[]
+     *
+     * @ORM\OneToMany(targetEntity="ArticleBundle\Entity\ArticleView", mappedBy="article", orphanRemoval=true)
+     */
+    protected $views;
+
+    public function __construct()
+    {
+        $this->views = new ArrayCollection();
+    }
 
     /**
      * @return int
@@ -157,5 +170,25 @@ class Article extends TimestampableEntity
     public function getCreatedAt()
     {
         return parent::getCreatedAt();
+    }
+
+    /**
+     * @return ArticleView[]
+     */
+    public function getViews()
+    {
+        return $this->views;
+    }
+
+    /**
+     * @param ArticleView[] $views
+     *
+     * @return $this
+     */
+    public function setViews($views)
+    {
+        $this->views = $views;
+
+        return $this;
     }
 }

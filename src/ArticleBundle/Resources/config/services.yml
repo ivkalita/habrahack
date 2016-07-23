@@ -3,6 +3,10 @@ services:
         class: ArticleBundle\Entity\Manager\ArticleManager
         arguments: ['ArticleBundle\Entity\Article', '@doctrine']
 
+    article.manager.article_view:
+        class: ArticleBundle\Entity\Manager\ArticleViewManager
+        arguments: ['ArticleBundle\Entity\ArticleView', '@doctrine']
+
     admin.article:
         class: ArticleBundle\Admin\ArticleAdmin
         arguments: [~, ArticleBundle\Entity\Article, ~]
