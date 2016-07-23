@@ -22,6 +22,6 @@ class ArticleController extends BaseAPIController implements ClassResourceInterf
         $fromId = $request->query->get('fromId', null);
         $articles = $this->get('article.manager.article')->findOrderedResult($fromId, $count);
 
-        return $this->response(Payload::create(['articles' => $articles]), [Article::FULL_CARD]);
+        return $this->response(Payload::create($articles), [Article::FULL_CARD]);
     }
 }
