@@ -13,6 +13,7 @@ use AppBundle\Entity\TimestampableEntity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as JMS;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Class Article
@@ -21,6 +22,8 @@ use JMS\Serializer\Annotation as JMS;
  * @ORM\Entity()
  * @ORM\Table(name="articles__articles")
  * @JMS\ExclusionPolicy("all")
+ *
+ * @ORM\HasLifecycleCallbacks()
  */
 class Article extends TimestampableEntity
 {
@@ -66,6 +69,11 @@ class Article extends TimestampableEntity
      * @JMS\Groups("all")
      */
     protected $placeholderUrl;
+
+    /**
+     * @var UploadedFile
+     */
+    protected $file;
 
     /**
      * @var ArticleView[]
@@ -178,6 +186,26 @@ class Article extends TimestampableEntity
     public function getViews()
     {
         return $this->views;
+    }
+
+    /**
+     * @return UploadedFile
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
+     * @param UploadedFile $file
+     *
+     * @return $this
+     */
+    public function setFile($file)
+    {
+        $this->file = $file;
+
+        return $this;
     }
 
     /**
