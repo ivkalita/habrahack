@@ -29,7 +29,7 @@ class ArticleManager extends BaseEntityManager
          */
         $pivotArticle = null;
         if ($fromId) {
-            $pivotArticle = $this->findOneBy($fromId);
+            $pivotArticle = $this->find($fromId);
             if (!$pivotArticle) {
                 throw new NotFoundException();
             }
