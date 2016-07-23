@@ -11,29 +11,9 @@ services:
         class: UserBundle\Entity\Manager\AccessTokenManager
         arguments: ['UserBundle\Entity\AccessToken', '@doctrine']
 
-    user.manager.passport:
-        class: UserBundle\Entity\Manager\PassportManager
-        arguments: ['UserBundle\Entity\Passport', '@doctrine']
-
     user.manager.phone:
         class: UserBundle\Entity\Manager\PhoneManager
         arguments: ['UserBundle\Entity\Phone', '@doctrine']
-
-    user.manager.user_role:
-        class: UserBundle\Entity\Manager\UserRoleManager
-        arguments: ['UserBundle\Entity\UserRole', '@doctrine']
-
-    user.manager.feedback:
-        class: UserBundle\Entity\Manager\FeedbackManager
-        arguments: ['UserBundle\Entity\Feedback', '@doctrine']
-
-    user.manager.change_phone_request:
-        class: UserBundle\Entity\Manager\ChangePhoneRequestManager
-        arguments: ['UserBundle\Entity\ChangePhoneRequest', '@doctrine']
-
-    user.manager.sms_notification:
-        class: UserBundle\Entity\Manager\SMSNotificationManager
-        arguments: ['UserBundle\Entity\SMSNotification', '@doctrine']
 
     user.handler.user:
         class: UserBundle\Handler\UserHandler
@@ -41,14 +21,4 @@ services:
 
     user.handler.auth:
         class: UserBundle\Handler\AuthHandler
-        arguments: ["@user.manager.user", "@user.manager.device", "@user.manager.access_token", "@user.manager.user_role", "@user.handler.user", "@user.manager.change_phone_request", "@user.manager.phone", "@event_dispatcher", "%main.disable_password_generation%"]
-
-    user.handler.sms_notification:
-        class: UserBundle\Handler\SMSNotificationHandler
-        arguments: ["@user.manager.sms_notification", "%smsru.api_key%"]
-
-    user.listener.sms_notification:
-        class: UserBundle\EventListener\SMSNotificationEventListener
-        arguments: ['@user.manager.sms_notification', '@old_sound_rabbit_mq.sms_notification_producer', '%main.disable_sms_notifications%']
-        tags:
-            - { name: 'kernel.event_listener', event: 'app.event.sms_notification', method: 'processSms' }
+        arguments: ["@user.manager.user", "@user.manager.device", "@user.manager.access_token", "@user.handler.user", "@user.manager.phone", "@event_dispatcher"]

@@ -3,5 +3,5 @@ app:
 
 mobile:
     resource:   routing_mobile.yml
-    prefix:     /api/mobile/v1
+    prefix:     /api/v1
     defaults:  { _format: json }

@@ -17,9 +17,6 @@ imports:
     # knp
     - { resource: knp/knp_paginator.yml }
 
-    # rabbitmqbundle
-    - { resource: rabbitmq/old_sound_rabbit_mq.yml }
-
     # bundles
     - { resource: "@AppBundle/Resources/config/services.yml" }
     - { resource: "@UserBundle/Resources/config/services.yml" }
