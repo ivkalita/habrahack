@@ -10,12 +10,14 @@ namespace ArticleBundle\Entity;
 
 use AppBundle\Entity\TimestampableEntity;
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as JMS;
 
 /**
  * Class ArticleView.
  *
  * @ORM\Entity()
  * @ORM\Table(name="articles__views")
+ * @JMS\ExclusionPolicy("all")
  */
 class ArticleView extends TimestampableEntity
 {
@@ -25,6 +27,9 @@ class ArticleView extends TimestampableEntity
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id()
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     *
+     * @JMS\Expose()
+     * @JMS\Groups("all")
      */
     protected $id;
 
@@ -74,5 +79,18 @@ class ArticleView extends TimestampableEntity
         $this->article = $article;
 
         return $this;
+    }
+
+    /**
+     * @return \DateTime
+     *
+     * @JMS\VirtualProperty()
+     * @JMS\Groups("all")
+     * @JMS\SerializedName("created_at")
+     * @JMS\Type("Timestamp")
+     */
+    public function getCreatedAt()
+    {
+        return parent::getCreatedAt();
     }
 }

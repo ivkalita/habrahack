@@ -10,14 +10,15 @@ sonata_admin:
     title: Видач
 #    title_logo: bundles/organizationadmin/images/icon_round.png
     templates:
-#        layout:     'AdminBundle::standard_layout.html.twig'
+        layout:     'AdminBundle::standard_layout.html.twig'
+        dashboard:  'AdminBundle::dashboard.html.twig'
 #        user_block: 'AdminBundle:Block:user_block.html.twig'
     dashboard:
         blocks:
             - { position: left, type: sonata.admin.block.admin_list }
         groups:
             default:
-                label: default
+                label: Главное
                 label_catalogue: AdminBundle
                 items:
                     - admin.article

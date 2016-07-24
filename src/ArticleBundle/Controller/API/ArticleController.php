@@ -13,6 +13,7 @@ use AppBundle\Controller\BaseAPIController;
 use AppBundle\Exceptions\NotFoundException;
 use ArticleBundle\Entity\Article;
 use ArticleBundle\Entity\ArticleView;
+use FOS\RestBundle\Controller\Annotations\Get;
 use FOS\RestBundle\Controller\Annotations\Post;
 use FOS\RestBundle\Routing\ClassResourceInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -45,5 +46,15 @@ class ArticleController extends BaseAPIController implements ClassResourceInterf
         $this->get('article.manager.article_view')->save($view);
 
         return $this->response(Payload::create());
+    }
+
+    /**
+     * @Get("views")
+     */
+    public function getViewsAction()
+    {
+        $views = $this->get('article.manager.article_view')->findLastDayOrderedByCreatedAt();
+
+        return $this->response(Payload::create($views));
     }
 }

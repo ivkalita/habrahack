@@ -12,4 +12,15 @@ use AppBundle\Entity\Manager\BaseEntityManager;
 
 class ArticleViewManager extends BaseEntityManager
 {
+    public function findLastDayOrderedByCreatedAt()
+    {
+        $now = new \DateTime('now', new \DateTimeZone('UTC'));
+        $yesterday = $now->sub(new \DateInterval('P1D'));
+        $qb = $this->getRepository()->createQueryBuilder('view')
+            ->where('view.createdAt > :yesterday')
+            ->orderBy('view.createdAt', 'ASC')
+            ->setParameter('yesterday', $yesterday);
+
+        return $qb->getQuery()->getResult();
+    }
 }

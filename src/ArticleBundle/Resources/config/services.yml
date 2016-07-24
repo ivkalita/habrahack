@@ -11,4 +11,4 @@ services:
         class: ArticleBundle\Admin\ArticleAdmin
         arguments: [~, ArticleBundle\Entity\Article, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Статьи}
+            - { name: sonata.admin, manager_type: orm, label: Статьи }
