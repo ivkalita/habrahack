@@ -1,0 +1,4 @@
+ArticleBundle\Entity\ArticleView:
+    article_view__{1..10000}:
+        article: "@article__*"
+        createdAt: <dateTimeBetween('-1 days', 'now')>
